@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de Despesas</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1> Controle de Despesas</h1>
+                <p class="subtitulo">Acompanhe seus gastos do dia e da semana</p>
+            </div>
+            <span id="dataAtualSpan" class="data-atual"></span>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <span class="card-label">💰 Gasto hoje</span>
+                <span class="card-valor" id="totalHoje">R$ 0,00</span>
+            </div>
+            <div class="card">
+                <span class="card-label">📆 Últimos 7 dias</span>
+                <span class="card-valor" id="totalSemana">R$ 0,00</span>
+            </div>
+            <div class="card">
+                <span class="card-label">🎯 Média diária (semana)</span>
+                <span class="card-valor" id="mediaDia">R$ 0,00</span>
+            </div>
+            <div class="card">
+                <span class="card-label">🚨 Maior gasto do dia</span>
+                <span class="card-valor" id="maiorGasto">R$ 0,00</span>
+            </div>
+        </section>
+
+        <div class="grid-principal">
+            <section class="painel">
+                <h2>Nova despesa</h2>
+                <div class="form">
+                    <div class="campo">
+                        <label for="descricaoInput">Descrição</label>
+                        <input type="text" id="descricaoInput" placeholder="Ex: Café, Uber..." maxlength="60" />
+                    </div>
+                    <div class="campo">
+                        <label for="valorInput">Valor (R$)</label>
+                        <input type="number" id="valorInput" step="0.01" min="0" placeholder="0,00" />
+                    </div>
+                    <div class="campo">
+                        <label for="categoriaInput">Categoria</label>
+                        <select id="categoriaInput">
+                            <option value="alimentação">Alimentação</option>
+                            <option value="transporte">Transporte</option>
+                            <option value="lazer">Lazer</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <button id="btnAdicionar" class="btn-adicionar">+ Adicionar</button>
+                </div>
+            </section>
+
+            <section class="painel">
+                <h2>Gastos por categoria <small>· últimos 7 dias</small></h2>
+                <div id="graficoContainer" class="grafico"></div>
+            </section>
+        </div>
+
+        <section class="painel">
+            <h2>Últimas despesas</h2>
+            <div class="tabela-wrapper">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabela"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
