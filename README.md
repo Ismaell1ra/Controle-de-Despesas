@@ -30,7 +30,7 @@ Um aplicativo web simples e funcional para gerenciar despesas do dia a dia, dese
 - **JavaScript (ES6+)** – manipulação do DOM, lógica de negócio e `localStorage`
 
 
-<img width="1130" height="859" alt="image" src="https://github.com/user-attachments/assets/4b554036-5590-4953-a526-01f97af7c7ae" />
+
 
 
 
